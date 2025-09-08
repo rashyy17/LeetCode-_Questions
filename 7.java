@@ -1,26 +1,23 @@
 class Solution {
     public int reverse(int x) {
-        boolean neg=false;
-        if (x<0) 
-        {neg=true;
-        x*=-1;
+        boolean b=false;
+        if(x<0){
+            x=-x;
+            b=true;
         }
-        int l=0;
-        int x2=x;
-        while(x2>0){
-            l++;
-            x2/=10;
+        int val=x;
+        long rev=0;
+        while(val>0){
+            int last=val%10;
+            rev=rev*10+last;
+            val/=10;
         }
-        int no0=l-1;
-        long x3=0;
-        while(x>0){
-            x3+=Math.pow(10,no0)*(x%10);
-            x/=10;
-            no0--;
+        if(b){
+            rev=-rev;
         }
-        
-        if(x3>Integer.MAX_VALUE || x3<Integer.MIN_VALUE) return 0;
-        if(neg) return (int)(-1*x3);
-        return (int)x3;
+        if(rev>Integer.MAX_VALUE || rev<Integer.MIN_VALUE){
+            return 0;
+        }
+        return (int)rev;
     }
 }
