@@ -18,6 +18,14 @@ class Solution {
         //     }
         // }
         // return t;
+        Approach one [dp kinda, not most optimal spacewise]:
+        - make two arrays, prefix and suffix, that hold max prefix and max suffix for each element in height.
+        - now again iterate through height, if height[i] is less than both prefix and suffix, it is holding water. 
+        (keep adding this water to a variable, by finding min between prefix[i] and suffix[i] and subtracting height)
+
+
+
+            
         int l=0,r=height.length-1;
         int lmax=0,rmax=0;
         int t=0;
@@ -42,5 +50,12 @@ class Solution {
             }
         }
         return t;
+
+
+         Approach two [2 pointers n time and 1 space] (best soln):
+        check while loop with l<r cond,
+        then check if(height[l]<hieght[r])....go to the part with lesser value (as that will trap water)
+        update lmax/rmax if height[i] is greater.
+        otherwise calculate trapped water and add to the answer.
     }
 }
