@@ -14,3 +14,8 @@ class Solution {
         return ans;
     }
 }
+
+// Approach:
+// 2 pointer, best soln
+// while(l<r)
+// and then calculate area between all
