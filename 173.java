@@ -1,3 +1,11 @@
+// do like inorder traversal.
+
+//     Use Stack-> Space Complexity O(h)-> h is max height of tree
+    
+//     When inititializing Stack (BSTIterator(root)) -->push root,then all nodes to the left of it
+//     When returning next()-> pop and return. Also check if popped node has a right child.
+//     When returning hasNext()->check if stack empty or not. if its empty, return false.
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
