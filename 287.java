@@ -1,16 +1,17 @@
-class Solution {
-    public int findDuplicate(int[] nums) {
-        int s=nums[0];
-        int f=nums[0];
-        do{
-            s=nums[s];
-            f=nums[nums[f]];
-        }while(s!=f);
-        s=nums[0];
-        while(s!=f){
-            s=nums[s];
-            f=nums[f];
-        }
-        return s;
+public int findDuplicate(int[] nums) {
+    // Phase 1: detect cycle
+    int slow = nums[0];
+    int fast = nums[nums[0]];
+    while (slow != fast) {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
     }
+
+    // Phase 2: find cycle entrance = duplicate
+    slow = 0;
+    while (slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+    return slow;
 }
