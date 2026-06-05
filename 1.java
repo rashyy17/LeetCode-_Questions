@@ -1,3 +1,5 @@
+//revised
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int[] nums2=new int[2];
