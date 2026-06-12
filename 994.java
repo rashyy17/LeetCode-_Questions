@@ -1,3 +1,4 @@
+//revised
 class Solution {
     class tri{
         int t,r,c;
