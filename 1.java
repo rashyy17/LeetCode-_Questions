@@ -1,5 +1,5 @@
 //revised
-//3
+//
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int[] nums2=new int[2];
@@ -14,5 +14,5 @@ class Solution {
         return nums2;
     }
 }
-//5
+//6
 
